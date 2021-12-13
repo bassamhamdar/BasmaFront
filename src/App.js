@@ -9,10 +9,10 @@ function App() {
   return (
     <RegisterProvider>
       <Routes>
+        <Route path="/register" exact element={<Register />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
         </Route>
-        <Route path="/register" exact element={<Register />} />
       </Routes>
     </RegisterProvider>
   );

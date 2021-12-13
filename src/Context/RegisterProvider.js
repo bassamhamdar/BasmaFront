@@ -21,7 +21,7 @@ export const RegisterProvider = ({ children }) => {
       const data = response.data;
       console.log("data");
       if (data.success) {
-        localStorage.setItem("auth", data);
+        localStorage.setItem("auth", data.access_token);
         navigate("/");
       }
       if (!data.success) {

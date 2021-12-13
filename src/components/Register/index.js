@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./style.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import RegisterContext from "../../Context/registerContext";
 import * as yup from "yup";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Register = () => {
+  const [verified, setVerified] = useState(false);
   const schema = yup.object().shape({
     name: yup.string().min(3).required(),
     password: yup
@@ -32,14 +34,19 @@ export const Register = () => {
     RegisterCustomer(data);
     reset();
   };
-  useEffect(() => {
-    localStorage.removeItem("auth");
-  }, []);
+  const check = () => {
+    setVerified(true);
+  };
   return (
     <div className="register-section">
       {console.log(localStorage.getItem("auth"))}
       <div className="design"></div>
-      <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="register__form"
+        onSubmit={
+          verified ? handleSubmit(onSubmit) : alert("Check ReCAPTCHA box")
+        }
+      >
         <input
           type="text"
           className="register__input"
@@ -60,6 +67,10 @@ export const Register = () => {
           {...register("password")}
         />
         <input type="submit" value="Sign up" className="register__btn" />
+        <ReCAPTCHA
+          sitekey="6LdJOp0dAAAAAL1P-H_AFw94D6EzyJ63yMw8lo_0"
+          onChange={check}
+        />
         <p className="error">{errors.name?.message}</p>
         <p className="error"> {errors.email?.message}</p>
         <p className="error"> {errors.password?.message}</p>
