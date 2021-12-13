@@ -1,0 +1,43 @@
+.section-6 {
+  width: 80%;
+  margin: auto;
+  background-image: linear-gradient(
+      rgba(37, 41, 88, 0.7),
+      rgba(37, 41, 88, 0.7)
+    ),
+    url("../../../images/download-bg.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 2rem;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+.section-6__content {
+  margin: 2rem;
+  margin: auto;
+  width: 60%;
+}
+.section-6__title,
+.section-6__p {
+  text-align: center;
+}
+.section-6__flex {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.section-6__img {
+  width: 150px;
+  height: 50px;
+}
+.section-6__footer {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  .section-6 {
+    font-size: small;
+  }
+}

@@ -1,0 +1,56 @@
+.section-3 {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5rem;
+  display: flex;
+}
+.section-3__text {
+  width: 50%;
+}
+.section-3__points {
+  padding: 1rem;
+  margin: 0;
+  margin-top: 2rem;
+  font-size: 12px;
+  color: gray;
+}
+.section-3__points img {
+  width: 15px;
+  height: 20px;
+  float: left;
+}
+.section-3__text h1 {
+  width: 60%;
+}
+
+.section-3__img {
+  width: 50%;
+  margin: auto;
+}
+.section-3__img img {
+  width: 40%;
+  margin-left: 30%;
+}
+.section-3 button {
+  margin-top: 2rem;
+  background-color: rgba(108, 44, 226, 255);
+  border: none;
+  height: 2rem;
+  width: 6rem;
+  border-radius: 4px;
+  color: white;
+}
+@media (max-width: 660px) {
+  .section-3 {
+    display: block;
+  }
+  .section-3__text {
+    width: 100%;
+  }
+}
+@media (max-width: 870px) {
+  .section-3__text h1 {
+    width: auto;
+    text-align: center;
+  }
+}
